@@ -15,8 +15,8 @@ hr{border:none;border-top:1px solid var(--line);margin:2em 0;}
 code{background:var(--code-bg);color:#ffcf99;padding:2px 6px;border-radius:4px;font-size:0.92em;font-family:"SF Mono","Cascadia Code",Consolas,monospace;}
 pre{background:var(--code-bg);padding:16px 18px;border-radius:8px;overflow-x:auto;border:1px solid var(--line);}
 pre code{background:none;padding:0;color:#d7e3ff;}
-table{border-collapse:collapse;width:100%;margin:1.2em 0;background:var(--panel);border-radius:8px;overflow:hidden;font-size:0.95em;}
-th,td{border:1px solid var(--line);padding:11px 14px;text-align:left;vertical-align:top;}
+table{border-collapse:collapse;width:100%;margin:1.2em 0;background:var(--panel);border-radius:8px;overflow:hidden;font-size:0.92em;}
+th,td{border:1px solid var(--line);padding:10px 13px;text-align:left;vertical-align:top;}
 th{background:var(--panel2);color:var(--accent);font-weight:700;}
 tr:nth-child(even) td{background:#131519;}
 strong{color:#fff;}
@@ -30,833 +30,33 @@ ul,ol{padding-left:1.5em;}li{margin:0.3em 0;}
 </style></head><body>
 <div id="content">
 <h1 id="elite-dangerous-controller-binding-layouts">Elite Dangerous — Controller Binding Layouts</h1>
-<h2 id="cmdr-john-deparagon-winwing-hotas-virpil-hosas">CMDR John DeParagon — WinWing HOTAS &amp; VirPil HOSAS</h2>
-<p><strong>Two independent presets sharing only the RC1-Falcon pedals.</strong>
-Playing in VR (Quest 3). On-foot is mouse + keyboard and is intentionally excluded.
-<strong>Ease ratings (1 = easiest reach, 10 = finger gymnastics) shown per control on Config A.</strong></p>
-<hr />
-<h2 id="design-rules-applied">Design rules applied</h2>
+<h2 id="cmdr-john-deparagon-winwing-hotas-config-a-virpil-hosas-config-b">CMDR John DeParagon — WinWing HOTAS (Config A) &amp; VirPil HOSAS (Config B)</h2>
+<p><strong>Organized to match the in-game Controls menu</strong> — General → Ship → SRV, subcategories in menu order — so you can work straight down the binding screen. Two columns per binding: <strong>WinWing</strong> (active rig) and <strong>VirPil</strong> (FA-Off rig, ~Sept).
+Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
+<p><strong>Legend:</strong> ⚠ = category placement or binding name I'm inferring (not yet confirmed against your current build) — verify on read-through or via <code>Custom.binds</code>. <em>(unbound)</em> = intentionally not bound. <em>(spare)</em> = free control available.</p>
+<h3 id="standing-hardware-rules">Standing hardware rules</h3>
 <ul>
-<li><strong>Easiest controls carry the highest-frequency actions.</strong> Placement follows the ease ratings, and a 3-way (2 useful positions) beats a 4-way hat (4 positions) for quick blind use.</li>
-<li><strong>Every hat is device-prefixed</strong> — "Stick Coolie" vs "Throttle Coolie" — so no row is ambiguous on its own. Both the stick and the throttle grip have a Coolie hat <em>and</em> a black button hat.</li>
-<li><strong>One control per binding within a category.</strong> Different categories (Flight, SRV, FSS, DSS, Galaxy Map, Fighter, Camera Suite, Free Camera) reuse the same controls — only one is active at a time.</li>
-<li><strong>Axis-first</strong> for anything analog. <strong>Headlook unbound</strong> (headset handles look).</li>
-</ul>
-<h3 id="hardware-constraints-captured-read-before-binding">Hardware constraints captured (read before binding)</h3>
-<ul>
-<li><strong>NEVER bind trigger stage 2.</strong> On this stick a stage-2 pull also fires the stage-1 weapon unintentionally — so <strong>stage 2 is left completely unbound</strong>, and Secondary fire lives on the front-top Red Button instead.</li>
-<li><strong>No throttle detent.</strong> Throttle is forward-only; reverse = <strong>Toggle Reverse Throttle</strong> on Throttle thumb #1 aft. Set the SimApp afterburner ratio so the AB detent doesn't eat throttle range.</li>
-<li><strong>Finger lifts are not buttons</strong> (physical travel stops). The AB zone is not Boost.</li>
-<li><strong>Throttle slew is a 2-axis</strong> (analog) — thrust in flight, camera in FSS/DSS/Free Camera.</li>
-<li><strong>Left-grip wheel ("Dial")</strong> = Sensor Zoom (flight) / FSS Tuning (FSS) — one axis, two category binds.</li>
-<li><strong>Gray knobs</strong> (HDG, CRS, PANEL LTS, HMD) each give three inputs: CCW, CW, push.</li>
-<li><strong>2-way switches</strong> rest down; flick up = the click. <strong>3-way switches</strong> rest center; each side is a momentary press.</li>
-<li><strong>Reset pips = balance</strong> (one binding). <strong>Master Mode</strong> isn't an ED concept; A/G and A/A are ordinary buttons. <strong>Orbit lines</strong> never bound. <strong>Panel Lights = ship/SRV lights.</strong> <strong>Charge ECM</strong> is the real action (no "Field Neutraliser").</li>
+<li><strong>Never bind Trigger stage 2</strong> — a stage-2 pull also fires stage 1. Secondary Fire is on the stick's front-top Red Button instead.</li>
+<li><strong>Throttle is forward-only</strong> (no detent); reverse = Toggle Reverse Throttle. Set SimApp afterburner ratio so the AB detent doesn't eat range.</li>
+<li><strong>Firing Deploys Hardpoints = ON</strong> — hardpoints auto-deploy on fire, so the manual Deploy Hardpoints bind is a convenience.</li>
+<li><strong>Headlook stays fully unbound</strong> (anti-VR; headset handles look). VR re-center = <strong>Reset HMD Orientation</strong>, which lives in <strong>Ship → Miscellaneous</strong>, not Headlook.</li>
 </ul>
 <hr />
-<h1 id="config-a-winwing-orion-2-base-f-15ex-stick-orion-2-throttle-fa-18-grip-rc1-falcon-pedals">CONFIG A — WinWing Orion 2 base + F-15EX stick + Orion 2 throttle (F/A-18 grip) + RC1-Falcon pedals</h1>
-<blockquote>
-<p>Bind in-game so ED writes device IDs. Ease ratings in <strong>(parentheses)</strong>.</p>
-</blockquote>
-<h2 id="a1-ship-axes-flight-category">A1 · Ship axes (Flight category)</h2>
+<h1 id="general-controls">GENERAL CONTROLS</h1>
+<h2 id="interface-mode">Interface Mode</h2>
 <table>
 <thead>
 <tr>
-<th>ED axis</th>
-<th>Control</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Pitch</td>
-<td>Stick <strong>Y</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Roll</td>
-<td>Stick <strong>X</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Yaw</td>
-<td><strong>Pedals rudder</strong></td>
-<td>Also SRV steering.</td>
-</tr>
-<tr>
-<td>Throttle</td>
-<td>Throttle <strong>main lever</strong></td>
-<td>Forward-only; reverse = Throttle thumb #1 aft.</td>
-</tr>
-<tr>
-<td>Lateral thrust</td>
-<td><strong>Throttle slew X</strong> (analog) <strong>(4)</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Vertical thrust</td>
-<td><strong>Throttle slew Y</strong> (analog) <strong>(4)</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Sensor Zoom</td>
-<td><strong>Left-grip wheel / Dial</strong> <strong>(7)</strong></td>
-<td>Same wheel = FSS Tuning in FSS category.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="a2-stick-f-15ex-grip-flight-category">A2 · Stick — F-15EX grip (Flight category)</h2>
-<table>
-<thead>
-<tr>
-<th>Control (ease)</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Trigger — stage 1 <strong>(1)</strong></td>
-<td><strong>Primary fire</strong> — <strong>never bind stage 2</strong></td>
-</tr>
-<tr>
-<td>Stick <strong>Crown hat</strong> ▲▼◀▶ + press <strong>(1)</strong></td>
-<td><strong>UI navigation:</strong> ▲▼◀▶; press = <strong>UI Select</strong></td>
-</tr>
-<tr>
-<td>Front-top <strong>Red Button</strong> <strong>(3)</strong></td>
-<td><strong>Secondary fire</strong></td>
-</tr>
-<tr>
-<td>Stick <strong>Coolie hat</strong> ▲▼◀▶ + press <strong>(3)</strong></td>
-<td><strong>Targeting:</strong> ▲ highest threat · ▼ next hostile · ◀ prev subsystem · ▶ next subsystem; press = <strong>Select Target Ahead</strong></td>
-</tr>
-<tr>
-<td><strong>Ring-finger red button</strong> (back) <strong>(3)</strong></td>
-<td><strong>Boost</strong></td>
-</tr>
-<tr>
-<td><strong>Pinky switch</strong> (back) <strong>(4)</strong></td>
-<td><strong>Flight Assist</strong> (toggle)</td>
-</tr>
-<tr>
-<td>Stick <strong>Bottom-left hat</strong> ▲▼◀▶ + press <strong>(5)</strong></td>
-<td><strong>Countermeasures:</strong> ▲ Heat Sink · ▼ Chaff · ◀ Shield Cell · ▶ Charge ECM; press = <strong>Deploy/Retract Hardpoints</strong></td>
-</tr>
-<tr>
-<td>Stick <strong>small black button hat</strong> ▲▼◀▶ + press <strong>(6)</strong></td>
-<td><strong>Target cycling:</strong> ▲ Cycle Next Target · ▼ Cycle Previous Ship · ◀ Cycle Previous Hostile · ▶ Cycle Next Hostile; press = <em>(spare)</em></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Optional: enable <strong>Firing Deploys Hardpoints</strong> in ED if you'd rather hardpoints auto-deploy and free the Bottom-left hat press.</p>
-</blockquote>
-<h2 id="a3-throttle-grip-fa-18-flight-category">A3 · Throttle grip — F/A-18 (Flight category)</h2>
-<p>Thumb switches left→right / top→bottom: <strong>#1 &amp; #3 momentary, #2 &amp; #4 sticky</strong>; 3-way resting center.</p>
-<table>
-<thead>
-<tr>
-<th>Control (ease)</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Throttle <strong>Coolie hat</strong> ▲▼◀▶ + press <strong>(3)</strong></td>
-<td><strong>Pips:</strong> ▲ ENG · ◀ SYS · ▶ WEP · ▼ Reset (= balance); press = <strong>UI Back</strong></td>
-</tr>
-<tr>
-<td>Throttle <strong>black button hat</strong> ▲▼◀▶ + press <strong>(7)</strong></td>
-<td><strong>Panel focus:</strong> ▲ Comms · ▼ Role · ◀ Nav · ▶ Internal; press = <strong>Next Panel Tab</strong></td>
-</tr>
-<tr>
-<td>Throttle <strong>slew</strong> (X/Y axis) <strong>(4)</strong></td>
-<td>Lateral/Vertical thrust; <strong>press = Switch Cockpit Mode</strong> (combat/analysis)</td>
-</tr>
-<tr>
-<td>Left-grip <strong>wheel / Dial</strong> (axis) <strong>(7)</strong></td>
-<td><strong>Sensor Zoom</strong></td>
-</tr>
-<tr>
-<td>Thumb <strong>#1</strong> (mom) <strong>(1)</strong></td>
-<td>fwd = <strong>Supercruise (FSD)</strong> · aft = <strong>Toggle Reverse Throttle</strong></td>
-</tr>
-<tr>
-<td>Thumb <strong>#2</strong> (sticky) <strong>(4)</strong></td>
-<td>fwd = <strong>Hyperspace Jump</strong> · aft = <strong>Cargo Scoop</strong></td>
-</tr>
-<tr>
-<td>Thumb <strong>#3</strong> (mom) <strong>(5)</strong></td>
-<td>fwd = <strong>Discovery Scanner (honk)</strong> · aft = <strong>Deploy DSS / fire probes</strong></td>
-</tr>
-<tr>
-<td>Thumb <strong>#4</strong> (sticky) <strong>(6)</strong></td>
-<td>fwd = <strong>Silent Running</strong> · aft = <strong>Supercruise Assist</strong></td>
-</tr>
-<tr>
-<td><strong>Pinky toggle</strong> (mom 3-way) <strong>(8)</strong></td>
-<td>up = <em>(spare)</em> · down = <strong>Reset HMD Orientation</strong></td>
-</tr>
-<tr>
-<td><strong>Pinky button</strong> <strong>(8)</strong></td>
-<td><em>(spare — assign if it's a distinct control)</em></td>
-</tr>
-<tr>
-<td><strong>Ring-finger button</strong> <strong>(9)</strong></td>
-<td><em>(spare — assign if it's a distinct control)</em></td>
-</tr>
-</tbody>
-</table>
-<h2 id="a4-throttle-base-panel-flight-category">A4 · Throttle base panel (Flight category)</h2>
-<h3 id="knobs-ccw-cw-push">Knobs — CCW / CW / push</h3>
-<table>
-<thead>
-<tr>
-<th>Knob</th>
-<th>CCW</th>
-<th>CW</th>
-<th>Push</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>HDG</strong></td>
-<td>Prev system in route</td>
-<td>Next system in route</td>
-<td>Target's target</td>
-</tr>
-<tr>
-<td><strong>CRS</strong></td>
-<td>Prev fire group</td>
-<td>Next fire group</td>
-<td>Fighter: Follow Me</td>
-</tr>
-<tr>
-<td><strong>PANEL LTS</strong></td>
-<td>Fighter: Recall/Dismiss</td>
-<td><em>(spare)</em></td>
-<td><strong>Ship / SRV Lights</strong></td>
-</tr>
-<tr>
-<td><strong>HMD</strong></td>
-<td><em>(spare)</em></td>
-<td><em>(spare)</em></td>
-<td><em>(spare)</em></td>
-</tr>
-</tbody>
-</table>
-<h3 id="switches-buttons">Switches &amp; buttons</h3>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>LDG GEAR</strong> (UP)</td>
-<td>Landing Gear</td>
-</tr>
-<tr>
-<td><strong>HOOK</strong> (UP)</td>
-<td>Night Vision</td>
-</tr>
-<tr>
-<td><strong>FLAP</strong> (3-way)</td>
-<td>up = <strong>Set Speed 75%</strong> · down = Fighter: Maintain Formation</td>
-</tr>
-<tr>
-<td><strong>LAUNCH BAR</strong> (3-way)</td>
-<td>extend = <strong>Previous Panel Tab</strong> · retract = <strong>Game Menu</strong></td>
-</tr>
-<tr>
-<td><strong>ADV MODE / ENG/DIS</strong> (single red button)</td>
-<td><strong>Enter FSS Mode</strong></td>
-</tr>
-<tr>
-<td><strong>#1 ROLL HDG SEL / ATT HOLD / STRG SEL</strong> (3-way)</td>
-<td>up = Select Wingman 1 · down = Select Wingman 2</td>
-</tr>
-<tr>
-<td><strong>#2 PITCH ALT HOLD / A/P OFF / ATT HOLD</strong> (3-way)</td>
-<td>up = Select Wingman 3 · down = Select Wingman's Target</td>
-</tr>
-<tr>
-<td><strong>#3 ARM / MASTER SAFE / SIM</strong> (3-way)</td>
-<td>up = Target Wingman (cycle) · down = Wingman Nav-Lock</td>
-</tr>
-<tr>
-<td><strong>WING FOLD</strong> (SPREAD/FOLD/PUSH)</td>
-<td><em>Fighter orders</em> — SPREAD = Attack Target · FOLD = Defend · PUSH = Hold Position</td>
-</tr>
-<tr>
-<td><strong>PARK BRK</strong> (PARK)</td>
-<td><em>Fighter order</em> — Engage At Will</td>
-</tr>
-<tr>
-<td><strong>A/G</strong> button</td>
-<td><strong>Galaxy Map</strong></td>
-</tr>
-<tr>
-<td><strong>A/A</strong> button</td>
-<td><strong>System Map</strong></td>
-</tr>
-<tr>
-<td><strong>Red switch above A/G·A/A</strong></td>
-<td><strong>Ship – Toggle Camera Suite</strong></td>
-</tr>
-<tr>
-<td><strong>JETT</strong> (red, guarded)</td>
-<td><strong>Jettison All Cargo</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="axes-spares">Axes &amp; spares</h3>
-<ul>
-<li><strong>Left-grip wheel / Dial → Sensor Zoom</strong> (flight) / <strong>FSS Tuning</strong> (FSS).</li>
-<li><strong>Spare:</strong> HMD knob (all 3) · two left-throttle buttons · Throttle pinky-toggle up · Throttle pinky button · Throttle ring-finger button · Slide axis · grip Z-axis (if present) · PANEL LTS CW.</li>
-</ul>
-<h2 id="a5-pedals-rc1-falcon-shared">A5 · Pedals (RC1-Falcon) — shared</h2>
-<table>
-<thead>
-<tr>
-<th>Function</th>
-<th>Control</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Yaw (flight) + SRV steering</td>
-<td>Rudder</td>
-</tr>
-<tr>
-<td>Throttle / SRV drive</td>
-<td>Throttle main lever (not pedals)</td>
-</tr>
-<tr>
-<td>Toe brakes</td>
-<td><strong>Unbound</strong> (non-centering)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="config-a-mode-specific-categories-reuse-flight-controls">CONFIG A — Mode-specific categories (reuse flight controls)</h1>
-<p>Never active at the same time as flight, so they reuse the same controls. <strong>No binding uses trigger stage 2.</strong></p>
-<h2 id="fss-full-spectrum-system-scanner">FSS — Full Spectrum System Scanner</h2>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>FSS function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Throttle slew (X/Y)</td>
-<td>Camera pitch / yaw</td>
-</tr>
-<tr>
-<td>Left-grip wheel / Dial</td>
-<td><strong>Tuning</strong></td>
-</tr>
-<tr>
-<td>Stick Trigger 1</td>
-<td><strong>Target Current Signal</strong></td>
-</tr>
-<tr>
-<td>Throttle slew press</td>
-<td><strong>Zoom In To Target</strong></td>
-</tr>
-<tr>
-<td>Stick Ring-finger button</td>
-<td><strong>Discovery Scan (honk)</strong> <em>(2nd home)</em></td>
-</tr>
-<tr>
-<td>Stick Pinky switch</td>
-<td><strong>Leave FSS</strong></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Target Current Signal</strong> lives here (FSS action). In normal flight, select signals via the Nav panel — there's no separate flight-category bind.</p>
-</blockquote>
-<h2 id="dss-detailed-surface-scanner-probes">DSS — Detailed Surface Scanner (probes)</h2>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>DSS function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Stick X / Y</td>
-<td>Aim</td>
-</tr>
-<tr>
-<td>Stick <strong>Trigger 1</strong></td>
-<td><strong>Fire probe</strong> <em>(stage 1 — never stage 2)</em></td>
-</tr>
-<tr>
-<td>Stick Coolie hat press</td>
-<td><strong>Toggle Front/Back View</strong></td>
-</tr>
-<tr>
-<td>Stick Pinky switch</td>
-<td><strong>Exit Mode</strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="fighter-orders-slf-phase-9-active-during-ship-flight-on-dedicated-base-controls">Fighter Orders (SLF — Phase 9; active during ship flight, on dedicated base controls)</h2>
-<table>
-<thead>
-<tr>
-<th>Order</th>
-<th>Control</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Attack Target</td>
-<td>WING FOLD SPREAD</td>
-</tr>
-<tr>
-<td>Defend</td>
-<td>WING FOLD FOLD</td>
-</tr>
-<tr>
-<td>Hold Position</td>
-<td>WING FOLD PUSH</td>
-</tr>
-<tr>
-<td>Engage At Will</td>
-<td>PARK BRK (PARK)</td>
-</tr>
-<tr>
-<td>Maintain Formation</td>
-<td>FLAP (down)</td>
-</tr>
-<tr>
-<td>Follow Me</td>
-<td>CRS knob push</td>
-</tr>
-<tr>
-<td>Recall/Dismiss Fighter</td>
-<td>PANEL LTS knob CCW</td>
-</tr>
-</tbody>
-</table>
-<h2 id="galaxy-map-camera">Galaxy Map camera</h2>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>Galaxy Map function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Stick Y / Stick X</td>
-<td>Cam Pitch / Cam Yaw</td>
-</tr>
-<tr>
-<td>Throttle main lever</td>
-<td>Cam Zoom</td>
-</tr>
-<tr>
-<td>Throttle slew X / Y</td>
-<td>Translate L-R / fwd-back</td>
-</tr>
-<tr>
-<td>Stick Crown hat ▲ / ▼</td>
-<td>Translate up / down</td>
-</tr>
-<tr>
-<td>Stick Trigger 1</td>
-<td>Select Current System</td>
-</tr>
-</tbody>
-</table>
-<h2 id="camera-suite">Camera Suite</h2>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Red switch above A/G·A/A</td>
-<td>Ship – Toggle Camera Suite <em>(flight category)</em></td>
-</tr>
-<tr>
-<td>SRV recall control</td>
-<td>SRV – Toggle Camera Suite <em>(SRV category)</em></td>
-</tr>
-<tr>
-<td>Stick Coolie hat ◀ / ▶</td>
-<td>Previous / Next Camera</td>
-</tr>
-<tr>
-<td>Stick Coolie hat press</td>
-<td>Enter Free Camera</td>
-</tr>
-</tbody>
-</table>
-<h2 id="free-camera">Free Camera</h2>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Stick X / Y, pedals</td>
-<td>Pitch / Yaw / Roll</td>
-</tr>
-<tr>
-<td>Throttle slew + main lever</td>
-<td>Move lateral / lift / fwd-back (6-DoF)</td>
-</tr>
-<tr>
-<td>Stick Crown hat ▲ / ▼</td>
-<td>Increase / Decrease Speed</td>
-</tr>
-<tr>
-<td>HDG knob CCW / CW</td>
-<td>Decrease / Increase Zoom (Focus)</td>
-</tr>
-<tr>
-<td>HDG knob push</td>
-<td>Zoom/Blur Toggle</td>
-</tr>
-<tr>
-<td>Throttle black hat ▲</td>
-<td>Stabiliser On/Off</td>
-</tr>
-<tr>
-<td>Throttle black hat ▼</td>
-<td>Camera/Ship Controls Toggle</td>
-</tr>
-<tr>
-<td>Throttle black hat ◀</td>
-<td>Attach/Detach Camera</td>
-</tr>
-<tr>
-<td>Throttle black hat ▶</td>
-<td>Toggle HUD</td>
-</tr>
-<tr>
-<td>Stick Pinky switch</td>
-<td>Exit Free Camera</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h1 id="config-b-virpil-hosas-left-right-cdt-aeromax-rc1-falcon-pedals">CONFIG B — VirPil HOSAS (left + right CDT-AEROMAX) + RC1-Falcon pedals</h1>
-<p><strong>Role:</strong> dedicated <strong>FA-Off</strong> rig. Right stick = rotation, left stick = translation + throttle, pedals = yaw.</p>
-<h2 id="b1-ship-axes">B1 · Ship axes</h2>
-<table>
-<thead>
-<tr>
-<th>ED axis</th>
-<th>Control</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Pitch</td>
-<td><strong>Right</strong> stick Y</td>
-</tr>
-<tr>
-<td>Roll</td>
-<td><strong>Right</strong> stick X</td>
-</tr>
-<tr>
-<td>Yaw</td>
-<td>Pedals rudder</td>
-</tr>
-<tr>
-<td>Lateral thrust</td>
-<td><strong>Left</strong> stick X</td>
-</tr>
-<tr>
-<td>Vertical thrust</td>
-<td><strong>Left</strong> stick Y</td>
-</tr>
-<tr>
-<td>Throttle</td>
-<td><strong>Left</strong> throttle module lever (forward-only + Toggle Reverse Throttle)</td>
-</tr>
-<tr>
-<td>Right / Left twist</td>
-<td>Locked</td>
-</tr>
-<tr>
-<td>Toe brakes</td>
-<td>Unbound (non-centering)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="b2-right-stick-aiming-combat-hand">B2 · Right stick — aiming / combat hand</h2>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>[C] Click</th>
-<th>[H] Hold</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Trigger — stage 1</td>
-<td><strong>Primary fire</strong></td>
-<td>—</td>
-</tr>
-<tr>
-<td>Trigger — stage 2</td>
-<td><strong>Secondary fire</strong></td>
-<td>—</td>
-</tr>
-<tr>
-<td>Hat A ▲▼◀▶</td>
-<td>Pips: ▲ ENG · ▼ reset · ◀ SYS · ▶ WEP</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Hat A — push</td>
-<td>Reset pips</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Hat B ▲▼◀▶</td>
-<td>Target: ▲ highest threat · ▼ next hostile · ◀ prev subsystem · ▶ next subsystem</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Hat B — push</td>
-<td>Target ahead</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Hat C ▲▼◀▶</td>
-<td>Panel focus: ▲ Comms · ▼ Role · ◀ Nav · ▶ Internal</td>
-<td>push = UI back</td>
-</tr>
-<tr>
-<td>Ministick ▲▼◀▶ + push</td>
-<td><strong>UI navigation</strong> + select</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Button 1</td>
-<td><strong>Boost</strong></td>
-<td>Silent running</td>
-</tr>
-<tr>
-<td>Button 2</td>
-<td><strong>Heat sink</strong></td>
-<td>Chaff</td>
-</tr>
-<tr>
-<td>Button 3</td>
-<td><strong>Deploy hardpoints</strong></td>
-<td>—</td>
-</tr>
-<tr>
-<td>Button 4</td>
-<td>Next fire group</td>
-<td>Prev fire group</td>
-</tr>
-<tr>
-<td>Paddle (rear)</td>
-<td><strong>Select target ahead</strong></td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Config B's stick has no stage-2 misfire issue; stage 2 = Secondary fire here is fine.</p>
-</blockquote>
-<h2 id="b3-left-stick-throttle-thruster-hand">B3 · Left stick — throttle / thruster hand</h2>
-<table>
-<thead>
-<tr>
-<th>Control</th>
-<th>[C] Click</th>
-<th>[H] Hold</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Trigger — stage 1</td>
-<td><strong>Supercruise</strong> (FSD)</td>
-<td><strong>Hyperspace jump</strong></td>
-</tr>
-<tr>
-<td>Trigger — stage 2</td>
-<td>Supercruise assist toggle</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Throttle module — Toggle Reverse Throttle</td>
-<td>Reverse-throttle toggle</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Hat A ▲▼◀▶</td>
-<td>▲ Heat sink · ▼ Charge ECM · ◀ Chaff · ▶ Shield cell</td>
-<td>push = Reset HMD</td>
-</tr>
-<tr>
-<td>Hat B ▲▼◀▶</td>
-<td>▲ Lights · ▼ Night vision · ◀ Cargo scoop · ▶ Landing gear</td>
-<td>push = Silent running</td>
-</tr>
-<tr>
-<td>Hat C ▲▼◀▶</td>
-<td>▲ next system · ▼ target wingman · ◀ wingman nav-lock · ▶ target's target</td>
-<td>push = (spare)</td>
-</tr>
-<tr>
-<td>Ministick ▲▼◀▶ + push</td>
-<td><strong>FSS / DSS camera</strong> + push = enter/exit FSS</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Button 1</td>
-<td><strong>Galaxy map</strong></td>
-<td>System map</td>
-</tr>
-<tr>
-<td>Button 2</td>
-<td><strong>Recenter VR</strong> <em>(runtime)</em></td>
-<td>UI back</td>
-</tr>
-<tr>
-<td>Button 3</td>
-<td><strong>Reset pips</strong></td>
-<td>—</td>
-</tr>
-<tr>
-<td>Button 4</td>
-<td>Discovery Scanner (honk)</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Paddle (rear)</td>
-<td><strong>Flight Assist</strong> (hold = FA on)</td>
-<td>—</td>
-</tr>
-<tr>
-<td>Thumbstick push</td>
-<td>Throttle 100%</td>
-<td>Throttle 0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="b4-pedals">B4 · Pedals</h2>
-<p>Same as A5 — rudder = yaw + SRV steering; toe brakes unbound.</p>
-<hr />
-<h1 id="shared-srv-fighter-flight-both-rigs">SHARED — SRV &amp; Fighter flight (both rigs)</h1>
-<h2 id="srv-surface-recon-vehicle">SRV (Surface Recon Vehicle)</h2>
-<table>
-<thead>
-<tr>
-<th>Function</th>
+<th>Binding</th>
 <th>WinWing (Config A)</th>
-<th>VirPil HOSAS (Config B)</th>
+<th>VirPil (Config B)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Drive (accel/reverse)</td>
-<td>Throttle main lever</td>
-<td>Left throttle lever</td>
-</tr>
-<tr>
-<td>Steering (turn)</td>
-<td>Pedals rudder</td>
-<td>Pedals rudder</td>
-</tr>
-<tr>
-<td>Pitch / Roll</td>
-<td>Stick Y / X</td>
-<td>Right stick Y / X</td>
-</tr>
-<tr>
-<td>Vertical thrusters (jump)</td>
-<td>Stick ring-finger button</td>
-<td>Right Button 1</td>
-</tr>
-<tr>
-<td>Primary fire</td>
-<td>Stick Trigger 1</td>
-<td>Trigger 1</td>
-</tr>
-<tr>
-<td>Secondary fire</td>
-<td>Stick front-top Red Button</td>
-<td>Trigger 2</td>
-</tr>
-<tr>
-<td>Turret yaw/pitch</td>
-<td>Throttle slew</td>
-<td>Right ministick</td>
-</tr>
-<tr>
-<td>Toggle turret</td>
-<td>Stick Coolie push</td>
-<td>Right Hat B push</td>
-</tr>
-<tr>
-<td>Headlights</td>
-<td>PANEL LTS push</td>
-<td>Left Hat B ▲</td>
-</tr>
-<tr>
-<td>Handbrake</td>
-<td>Throttle thumb #2</td>
-<td>Right paddle</td>
-</tr>
-<tr>
-<td>Recall/dismiss ship</td>
-<td>Throttle thumb #4</td>
-<td>Left Button 2</td>
-</tr>
-<tr>
-<td>SRV – Toggle Camera Suite</td>
-<td>Throttle thumb #4 (SRV cat)</td>
-<td>Left Button 2 (SRV cat)</td>
-</tr>
-<tr>
-<td>Target</td>
-<td>Stick Coolie hat</td>
-<td>Right Hat B</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ship-launched-fighter-flight">Ship-Launched Fighter (flight)</h2>
-<p>Pitch/roll/yaw, throttle, fire, and combat hats mirror the ship. <strong>Fighter orders</strong> bound separately (Config A: WING FOLD positions, PARK BRK, FLAP down, CRS push, PANEL LTS CCW).</p>
-<hr />
-<h1 id="ui-menu-controls-explicit">UI / Menu controls (explicit)</h1>
-<table>
-<thead>
-<tr>
-<th>UI action</th>
-<th>WinWing (Config A)</th>
-<th>VirPil HOSAS (Config B)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>UI Up / Down / Left / Right</td>
+<td>UI Panel Up / Down / Left / Right</td>
 <td>Stick <strong>Crown hat</strong> ▲▼◀▶</td>
-<td>Right ministick ▲▼◀▶</td>
+<td>Right <strong>ministick</strong> ▲▼◀▶</td>
 </tr>
 <tr>
 <td>UI Select</td>
@@ -865,42 +65,912 @@ Playing in VR (Quest 3). On-foot is mouse + keyboard and is intentionally exclud
 </tr>
 <tr>
 <td>UI Back</td>
-<td>Throttle Coolie push</td>
-<td>Right Hat C push</td>
+<td>Throttle <strong>Coolie hat</strong> push</td>
+<td>Right <strong>Hat C</strong> push</td>
 </tr>
 <tr>
-<td>Next Panel Tab</td>
-<td>Throttle black hat push</td>
-<td>Right Hat B push</td>
+<td>UI Panel Next (tab)</td>
+<td>Throttle <strong>black hat</strong> push</td>
+<td>Right <strong>Hat B</strong> push</td>
 </tr>
 <tr>
-<td>Previous Panel Tab</td>
+<td>UI Panel Previous (tab) ⚠</td>
 <td>LAUNCH BAR extend</td>
 <td><em>(spare)</em></td>
 </tr>
 <tr>
+<td>Focus Comms Panel</td>
+<td>Throttle black hat ▲</td>
+<td>Right Hat C ▲</td>
+</tr>
+<tr>
+<td>Focus Role Panel</td>
+<td>Throttle black hat ▼</td>
+<td>Right Hat C ▼</td>
+</tr>
+<tr>
+<td>Focus Left/Nav Panel</td>
+<td>Throttle black hat ◀</td>
+<td>Right Hat C ◀</td>
+</tr>
+<tr>
+<td>Focus Internal/Right Panel</td>
+<td>Throttle black hat ▶</td>
+<td>Right Hat C ▶</td>
+</tr>
+<tr>
+<td>Other Interface Mode rows ⚠</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="galaxy-map-reuses-flight-controls-in-this-category">Galaxy Map <em>(reuses flight controls in this category)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cam Pitch / Yaw</td>
+<td>Stick Y / X</td>
+<td>Right stick Y / X</td>
+</tr>
+<tr>
+<td>Cam Translate L-R / fwd-back</td>
+<td>Throttle slew X / Y</td>
+<td>Left stick X / Y</td>
+</tr>
+<tr>
+<td>Cam Translate up / down</td>
+<td>Stick Crown hat ▲ / ▼</td>
+<td>Left ministick ▲ / ▼</td>
+</tr>
+<tr>
+<td>Cam Zoom</td>
+<td>Throttle main lever</td>
+<td>Left throttle lever</td>
+</tr>
+<tr>
+<td>Select Current System</td>
+<td>Stick Trigger 1</td>
+<td>Right Trigger 1</td>
+</tr>
+<tr>
+<td>Other Galaxy Map rows ⚠</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="camera-suite">Camera Suite</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ship – Toggle Camera Suite</td>
+<td><strong>Red switch</strong> above A/G·A/A</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>SRV – Toggle Camera Suite</td>
+<td>Throttle thumb #4 <em>(SRV cat)</em></td>
+<td>Left Button 2 <em>(SRV cat)</em></td>
+</tr>
+<tr>
+<td>Next / Previous Camera</td>
+<td>Stick Coolie hat ▶ / ◀</td>
+<td>Right Hat B ▶ / ◀</td>
+</tr>
+<tr>
+<td>Enter Free Camera</td>
+<td>Stick Coolie hat press</td>
+<td>Right Hat B push</td>
+</tr>
+<tr>
+<td>Other Camera Suite rows ⚠</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="free-camera-reuses-flight-controls">Free Camera <em>(reuses flight controls)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pitch / Yaw / Roll</td>
+<td>Stick X/Y, pedals</td>
+<td>Right stick + pedals</td>
+</tr>
+<tr>
+<td>Move lateral / lift / fwd-back</td>
+<td>Throttle slew + main lever</td>
+<td>Left stick + throttle</td>
+</tr>
+<tr>
+<td>Increase / Decrease Speed</td>
+<td>Stick Crown hat ▲ / ▼</td>
+<td>Left ministick ▲ / ▼</td>
+</tr>
+<tr>
+<td>Zoom (Focus) − / +</td>
+<td>HDG knob CCW / CW</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Zoom/Blur Toggle</td>
+<td>HDG knob push</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Stabiliser / Controls Toggle / Attach / HUD</td>
+<td>Throttle black hat ▲▼◀▶</td>
+<td>Right Hat C ▲▼◀▶</td>
+</tr>
+<tr>
+<td>Exit Free Camera</td>
+<td>Stick Pinky switch</td>
+<td>Left ministick push</td>
+</tr>
+</tbody>
+</table>
+<h2 id="holo-me-playlist-store-camera">Holo-Me · Playlist · Store Camera</h2>
+<p>All <strong>(unbound)</strong> — cosmetic; leave on keyboard if ever needed.</p>
+<h2 id="system-colonisation-facility-placement">System Colonisation Facility Placement ⚠</h2>
+<p>New category (recent build). <strong>System Colonisation Suite</strong> currently shows <strong>[Y]</strong>. Sub-entries not yet mapped — relevant to Phase 7 colonization. <em>(Address when you reach colonization.)</em></p>
+<hr />
+<h1 id="ship-controls">SHIP CONTROLS</h1>
+<h2 id="mouse-controls">Mouse Controls</h2>
+<p>All <strong>(unbound)</strong> — HOTAS rig.</p>
+<h2 id="flight-rotation">Flight Rotation</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pitch</td>
+<td>Stick <strong>Y</strong></td>
+<td>Right stick <strong>Y</strong></td>
+</tr>
+<tr>
+<td>Roll</td>
+<td>Stick <strong>X</strong></td>
+<td>Right stick <strong>X</strong></td>
+</tr>
+<tr>
+<td>Yaw</td>
+<td><strong>Pedals rudder</strong></td>
+<td><strong>Pedals rudder</strong></td>
+</tr>
+<tr>
+<td>Yaw/Pitch/Roll button variants</td>
+<td><em>(unbound — axes)</em></td>
+<td><em>(unbound — axes)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="flight-thrust">Flight Thrust</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lateral Thrust (L/R)</td>
+<td>Throttle <strong>slew X</strong></td>
+<td><strong>Left stick X</strong></td>
+</tr>
+<tr>
+<td>Vertical Thrust (U/D)</td>
+<td>Throttle <strong>slew Y</strong></td>
+<td><strong>Left stick Y</strong></td>
+</tr>
+<tr>
+<td>Forward/Backward Thrust</td>
+<td><em>(unbound — throttle)</em></td>
+<td><em>(unbound — throttle)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="alternate-flight-controls">Alternate Flight Controls</h2>
+<p>All <strong>(unbound)</strong>.</p>
+<h2 id="flight-throttle">Flight Throttle</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Throttle Axis</td>
+<td>Throttle <strong>main lever</strong> (fwd-only)</td>
+<td><strong>Left throttle module</strong> (fwd-only)</td>
+</tr>
+<tr>
+<td>Toggle Reverse Throttle</td>
+<td>Throttle <strong>thumb #1 aft</strong></td>
+<td>Left throttle module toggle</td>
+</tr>
+<tr>
+<td>Set Speed 75%</td>
+<td><strong>FLAP up</strong></td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Set Speed / increment rows</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="flight-landing-overrides">Flight Landing Overrides</h2>
+<p>All <strong>(unbound)</strong> — default.</p>
+<h2 id="flight-miscellaneous-confirmed-contents">Flight Miscellaneous <em>(confirmed contents)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toggle Flight Assist</td>
+<td>Stick <strong>Pinky switch</strong></td>
+<td>Left <strong>paddle</strong> (hold = FA on)</td>
+</tr>
+<tr>
+<td>Engine Boost</td>
+<td>Stick <strong>Ring-finger red button</strong></td>
+<td>Right <strong>Button 1</strong></td>
+</tr>
+<tr>
+<td>Toggle Frame Shift Drive</td>
+<td><em>(unbound — discrete SC/Hyperspace below)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+<tr>
+<td>Supercruise</td>
+<td>Throttle <strong>thumb #1 fwd</strong></td>
+<td>Left <strong>Trigger 1</strong> (click)</td>
+</tr>
+<tr>
+<td>Hyperspace Jump</td>
+<td>Throttle <strong>thumb #2 fwd</strong></td>
+<td>Left Trigger 1 (hold)</td>
+</tr>
+<tr>
+<td>Rotational Correction</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+<tr>
+<td>Toggle Orbit Lines</td>
+<td><em>(unbound — never used)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="targeting">Targeting</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select Target Ahead</td>
+<td>Stick <strong>Coolie hat</strong> push</td>
+<td>Right <strong>paddle</strong></td>
+</tr>
+<tr>
+<td>Select Highest Threat</td>
+<td>Stick Coolie hat ▲</td>
+<td>Right <strong>Hat B</strong> ▲</td>
+</tr>
+<tr>
+<td>Select Next Hostile</td>
+<td>Stick Coolie hat ▼</td>
+<td>Right Hat B ▼</td>
+</tr>
+<tr>
+<td>Cycle Previous Subsystem</td>
+<td>Stick Coolie hat ◀</td>
+<td>Right Hat B ◀</td>
+</tr>
+<tr>
+<td>Cycle Next Subsystem</td>
+<td>Stick Coolie hat ▶</td>
+<td>Right Hat B ▶</td>
+</tr>
+<tr>
+<td>Cycle Next Target</td>
+<td>Stick <strong>small black hat</strong> ▲</td>
+<td><em>(unbound)</em></td>
+</tr>
+<tr>
+<td>Cycle Previous Target</td>
+<td>Stick small black hat ▼</td>
+<td><em>(unbound)</em></td>
+</tr>
+<tr>
+<td>Cycle Previous Hostile</td>
+<td>Stick small black hat ◀</td>
+<td><em>(unbound)</em></td>
+</tr>
+<tr>
+<td>Target Wingman 1 / 2</td>
+<td>Lower switch <strong>#1</strong> up / down</td>
+<td>Left <strong>Hat C</strong> ▼ (cycle)</td>
+</tr>
+<tr>
+<td>Target Wingman 3</td>
+<td>Lower switch <strong>#2</strong> up</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Select Wingman's Target</td>
+<td>Lower switch #2 down</td>
+<td>Left Hat C ▶</td>
+</tr>
+<tr>
+<td>Target Wingman (cycle)</td>
+<td>Lower switch <strong>#3</strong> up</td>
+<td>Left Hat C ▼</td>
+</tr>
+<tr>
+<td>Wingman Nav Lock</td>
+<td>Lower switch #3 down</td>
+<td>Left Hat C ◀</td>
+</tr>
+<tr>
+<td>Target's Target</td>
+<td><strong>HDG knob</strong> push</td>
+<td>Left Hat C ▶</td>
+</tr>
+<tr>
+<td>Select Next/Previous System in Route ⚠</td>
+<td>HDG knob CW / CCW</td>
+<td>Left Hat C ▲</td>
+</tr>
+</tbody>
+</table>
+<h2 id="weapons-confirmed-contents">Weapons <em>(confirmed contents)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Fire</td>
+<td>Stick <strong>Trigger 1</strong></td>
+<td>Right Trigger 1</td>
+</tr>
+<tr>
+<td>Secondary Fire</td>
+<td>Stick <strong>front-top Red Button</strong></td>
+<td>Right Trigger 2</td>
+</tr>
+<tr>
+<td>Cycle Next Fire Group</td>
+<td><strong>CRS knob CW</strong></td>
+<td>Right Button 4</td>
+</tr>
+<tr>
+<td>Cycle Previous Fire Group</td>
+<td>CRS knob CCW</td>
+<td>Right Button 4 (alt)</td>
+</tr>
+<tr>
+<td>Deploy Hardpoints</td>
+<td>Stick <strong>Bottom-left hat</strong> push</td>
+<td>Right Button 3</td>
+</tr>
+<tr>
+<td>Firing Deploys Hardpoints</td>
+<td><strong>ON</strong> (setting)</td>
+<td>ON</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cooling-confirmed-contents">Cooling <em>(confirmed contents)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Silent Running</td>
+<td>Throttle <strong>thumb #4 fwd</strong></td>
+<td>Left <strong>Hat B</strong> push</td>
+</tr>
+<tr>
+<td>Deploy Heatsink</td>
+<td>Stick <strong>Bottom-left hat</strong> ▲</td>
+<td>Right <strong>Button 2</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="miscellaneous-confirmed-contents">Miscellaneous <em>(confirmed contents)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ship Lights</td>
+<td><strong>PANEL LTS</strong> push</td>
+<td>Left Hat B ▲</td>
+</tr>
+<tr>
+<td>Sensor Zoom Axis</td>
+<td><strong>Left-grip wheel / Dial</strong></td>
+<td><em>(spare axis)</em></td>
+</tr>
+<tr>
+<td>Increase / Decrease Sensor Zoom</td>
+<td><em>(unbound — axis)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+<tr>
+<td>Divert Power To Engines</td>
+<td>Throttle <strong>Coolie hat</strong> ▲</td>
+<td>Right <strong>Hat A</strong> ▲</td>
+</tr>
+<tr>
+<td>Divert Power To Weapons</td>
+<td>Throttle Coolie hat ▶</td>
+<td>Right Hat A ▶</td>
+</tr>
+<tr>
+<td>Divert Power To Systems</td>
+<td>Throttle Coolie hat ◀</td>
+<td>Right Hat A ◀</td>
+</tr>
+<tr>
+<td>Balance Power Distribution</td>
+<td>Throttle Coolie hat ▼ / push</td>
+<td>Right Hat A ▼ / push</td>
+</tr>
+<tr>
+<td>Reset HMD Orientation</td>
+<td>Throttle <strong>pinky-toggle down</strong></td>
+<td>Left Hat A push</td>
+</tr>
+<tr>
+<td>Cargo Scoop</td>
+<td>Throttle <strong>thumb #2 aft</strong></td>
+<td>Left Hat B ◀</td>
+</tr>
+<tr>
+<td>Jettison All Cargo</td>
+<td><strong>JETT</strong> (guarded)</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Landing Gear</td>
+<td><strong>LDG GEAR up</strong></td>
+<td>Left Hat B ▶</td>
+</tr>
+<tr>
+<td>Microphone Mute (PTT)</td>
+<td><em>(spare — Throttle pinky button)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+<tr>
+<td>Use Shield Cell</td>
+<td>Stick Bottom-left hat ◀</td>
+<td>Left Hat A ▶</td>
+</tr>
+<tr>
+<td>Use Chaff Launcher</td>
+<td>Stick Bottom-left hat ▼</td>
+<td>Left Hat A ◀</td>
+</tr>
+<tr>
+<td>Use Shutdown Field Neutraliser</td>
+<td>Throttle <strong>pinky-toggle up</strong></td>
+<td>Left Hat C push</td>
+</tr>
+<tr>
+<td>Charge ECM</td>
+<td>Stick Bottom-left hat ▶</td>
+<td>Left Hat A ▼</td>
+</tr>
+<tr>
+<td>Night Vision</td>
+<td><strong>HOOK up</strong></td>
+<td>Left Hat B ▼</td>
+</tr>
+<tr>
+<td>Weapon Colour / Engine Colour</td>
+<td><em>(unbound — cosmetic)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+<tr>
+<td>System Colonisation Suite ⚠</td>
+<td>currently [Y]</td>
+<td><em>(TBD)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mode-switches-not-drilled-verify">Mode Switches ⚠ <em>(not drilled — verify)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open Galaxy Map</td>
+<td><strong>A/G</strong> button</td>
+<td>Left <strong>Button 1</strong> (click)</td>
+</tr>
+<tr>
+<td>Open System Map</td>
+<td><strong>A/A</strong> button</td>
+<td>Left Button 1 (hold)</td>
+</tr>
+<tr>
+<td>Player HUD Mode Toggle (combat/analysis)</td>
+<td>Throttle <strong>slew press</strong></td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Enter FSS Mode</td>
+<td><strong>ADV MODE</strong> red button</td>
+<td>Left ministick push</td>
+</tr>
+<tr>
 <td>Game Menu</td>
-<td>LAUNCH BAR retract</td>
+<td><strong>LAUNCH BAR retract</strong></td>
 <td><em>(keyboard ESC)</em></td>
 </tr>
 <tr>
-<td>Panel focus (Comms/Role/Nav/Internal)</td>
-<td>Throttle black hat ▲▼◀▶</td>
-<td>Right Hat C ▲▼◀▶</td>
+<td>Quick Comms / Friends / other rows ⚠</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="headlook-mode">Headlook Mode</h2>
+<p>All <strong>(unbound)</strong> — anti-VR; headset supersedes.</p>
+<h2 id="multi-crew">Multi-Crew</h2>
+<p>All <strong>(unbound)</strong> — solo play.</p>
+<h2 id="fighter-orders-slf-phase-9">Fighter Orders <em>(SLF — Phase 9)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil ⚠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attack Target</td>
+<td>WING FOLD SPREAD</td>
+<td><em>(spare hat)</em></td>
+</tr>
+<tr>
+<td>Defend</td>
+<td>WING FOLD FOLD</td>
+<td><em>(spare hat)</em></td>
+</tr>
+<tr>
+<td>Hold Position</td>
+<td>WING FOLD PUSH</td>
+<td><em>(spare hat)</em></td>
+</tr>
+<tr>
+<td>Engage At Will</td>
+<td>PARK BRK (PARK)</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Maintain Formation</td>
+<td>FLAP (down)</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Follow Me</td>
+<td>CRS knob push</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Recall / Dismiss Fighter</td>
+<td>PANEL LTS knob CCW</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Open Orders (panel)</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="full-spectrum-system-scanner-verify-contents">Full Spectrum System Scanner ⚠ <em>(verify contents)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Camera Pitch / Yaw</td>
+<td>Throttle slew</td>
+<td>Left ministick</td>
+</tr>
+<tr>
+<td>Tuning</td>
+<td>Left-grip wheel</td>
+<td><em>(spare axis)</em></td>
+</tr>
+<tr>
+<td>Target Current Signal</td>
+<td>Stick Trigger 1</td>
+<td>Right Trigger 1</td>
+</tr>
+<tr>
+<td>Zoom In To Target</td>
+<td>Throttle slew press</td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Discovery Scanner ("honk") ⚠</td>
+<td>Throttle thumb #3 fwd — <em>or via fire group; verify if a standalone bind exists</em></td>
+<td>Left Button 4</td>
+</tr>
+<tr>
+<td>Leave FSS</td>
+<td>Stick Pinky switch</td>
+<td>Left ministick push</td>
+</tr>
+</tbody>
+</table>
+<h2 id="detailed-surface-scanner-verify-contents">Detailed Surface Scanner ⚠ <em>(verify contents)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aim</td>
+<td>Stick X / Y</td>
+<td>Right stick</td>
+</tr>
+<tr>
+<td>Fire Probe</td>
+<td>Stick <strong>Trigger 1</strong> <em>(never stage 2)</em></td>
+<td>Right Trigger 1</td>
+</tr>
+<tr>
+<td>Toggle Front/Back View</td>
+<td>Stick Coolie hat press</td>
+<td>Right Hat B push</td>
+</tr>
+<tr>
+<td>Exit Mode</td>
+<td>Stick Pinky switch</td>
+<td>Left ministick push</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h1 id="vr-notes-quest-3">VR notes (Quest 3)</h1>
-<ul>
-<li><strong>Recenter view:</strong> Meta button, or in-game <strong>Reset HMD Orientation</strong> (Config A throttle pinky-toggle down; Config B left Hat A push).</li>
-<li><strong>HeadLook</strong> unbound — headset supersedes.</li>
-<li>Panels / UI / maps on momentary hats for blind reach. Larger HUD text recommended.</li>
-</ul>
-<h1 id="joytokey-optional">JoyToKey — optional</h1>
-<p>Most switches bind directly (press fires on the flick; return to rest). JoyToKey only needed to hold a sustained state — enable the per-button "press once even if held" option, then bind that key in ED.</p>
+<h1 id="srv-controls">SRV CONTROLS</h1>
+<h2 id="driving-verify-exact-rows">Driving ⚠ <em>(verify exact rows)</em></h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Steering (turn)</td>
+<td><strong>Pedals rudder</strong></td>
+<td>Pedals rudder</td>
+</tr>
+<tr>
+<td>Pitch (slopes)</td>
+<td>Stick Y</td>
+<td>Right stick Y</td>
+</tr>
+<tr>
+<td>Roll (airborne)</td>
+<td>Stick X</td>
+<td>Right stick X</td>
+</tr>
+<tr>
+<td>Vertical Thrusters (jump)</td>
+<td>Stick <strong>Ring-finger button</strong></td>
+<td>Right Button 1</td>
+</tr>
+<tr>
+<td>Primary Fire</td>
+<td>Stick Trigger 1</td>
+<td>Right Trigger 1</td>
+</tr>
+<tr>
+<td>Secondary Fire</td>
+<td>Stick front-top Red Button</td>
+<td>Right Trigger 2</td>
+</tr>
+<tr>
+<td>Handbrake</td>
+<td>Throttle thumb #2</td>
+<td>Right paddle</td>
+</tr>
+</tbody>
+</table>
+<h2 id="driving-targeting">Driving Targeting ⚠</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select Target Ahead</td>
+<td>Stick <strong>Coolie hat</strong></td>
+<td>Right Hat B</td>
+</tr>
+<tr>
+<td>Other rows ⚠</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="driving-turret-controls">Driving Turret Controls ⚠</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turret Yaw / Pitch</td>
+<td>Throttle <strong>slew</strong></td>
+<td>Right ministick</td>
+</tr>
+<tr>
+<td>Turret Fire</td>
+<td>Trigger 1</td>
+<td>Right Trigger 1</td>
+</tr>
+<tr>
+<td>Toggle Turret</td>
+<td>Stick Coolie hat press</td>
+<td>Right Hat B push</td>
+</tr>
+</tbody>
+</table>
+<h2 id="drive-throttle">Drive Throttle ⚠</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drive Axis (accel/reverse)</td>
+<td>Throttle <strong>main lever</strong> (fwd-only)</td>
+<td>Left throttle module</td>
+</tr>
+<tr>
+<td>Toggle Reverse</td>
+<td>Throttle thumb #1 aft</td>
+<td>Left module toggle</td>
+</tr>
+</tbody>
+</table>
+<h2 id="driving-miscellaneous">Driving Miscellaneous ⚠</h2>
+<table>
+<thead>
+<tr>
+<th>Binding</th>
+<th>WinWing</th>
+<th>VirPil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Headlights</td>
+<td><strong>PANEL LTS</strong> push</td>
+<td>Left Hat B ▲</td>
+</tr>
+<tr>
+<td>Recall / Dismiss Ship</td>
+<td>Throttle thumb #4</td>
+<td>Left Button 2</td>
+</tr>
+<tr>
+<td>SRV – Toggle Camera Suite</td>
+<td><em>(spare)</em></td>
+<td><em>(spare)</em></td>
+</tr>
+<tr>
+<td>Other rows ⚠</td>
+<td><em>(unbound)</em></td>
+<td><em>(unbound)</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="driving-mode-switches">Driving Mode Switches ⚠</h2>
+<p>Contents not drilled — <em>(verify; likely Galaxy Map, lights, HUD mode equivalents)</em>.</p>
 <hr />
-<p><em>Bind in-game so ED writes the correct device IDs, then export your <code>.binds</code> and I can sanity-check the device strings.</em></p>
+<h1 id="remaining-spares-winwing">Remaining spares (WinWing)</h1>
+<p>HMD knob (all 3) · two left-throttle buttons · Throttle pinky button · Throttle ring-finger button · Slide axis · grip Z-axis (if present) · PANEL LTS CW · FLAP DN unused half.</p>
+<h1 id="verification-pass">Verification pass</h1>
+<p>Categories confirmed against your current build: <strong>Flight Miscellaneous, Weapons, Cooling, Miscellaneous</strong>. Everything marked ⚠ is inferred from the Patch-7 structure (which matched your drill-ins exactly) and needs a glance — or, better, send your <strong><code>Custom.binds</code></strong> and I'll verify every row and device string at once.</p>
+<p><em>o7 Commander.</em></p>
 </div>
 <div id="fontbar"><span>Text size</span>
 <button onclick="adj(-1)">A&minus;</button><button onclick="adj(1)">A+</button><button onclick="reset()">Reset</button></div>
