@@ -40,10 +40,11 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 <li><strong>Throttle is forward-only</strong> (no detent); reverse = Toggle Reverse Throttle. Set SimApp afterburner ratio so the AB detent doesn't eat range.</li>
 <li><strong>Firing Deploys Hardpoints = ON</strong> — hardpoints auto-deploy on fire, so the manual Deploy Hardpoints bind is a convenience.</li>
 <li><strong>Headlook stays fully unbound</strong> (anti-VR; headset handles look). VR re-center = <strong>Reset HMD Orientation</strong>, which lives in <strong>Ship → Miscellaneous</strong>, not Headlook.</li>
+<li><strong>Same function = same control across ship and SRV.</strong> Ship and SRV are never active at once, so a shared action (fire, lights, camera suite, drive/throttle, reverse, target ahead, turret/thrust) uses the <em>identical</em> physical control in both categories — far easier to learn.</li>
 </ul>
 <hr />
 <h1 id="general-controls">GENERAL CONTROLS</h1>
-<h2 id="interface-mode">Interface Mode</h2>
+<h2 id="interface-mode-all-on-the-stick-one-handed-menu-nav">Interface Mode <em>(all on the stick — one-handed menu nav)</em></h2>
 <table>
 <thead>
 <tr>
@@ -55,48 +56,23 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 <tbody>
 <tr>
 <td>UI Panel Up / Down / Left / Right</td>
-<td>Stick <strong>Crown hat</strong> ▲▼◀▶</td>
+<td>Stick <strong>Crown hat</strong> ▲▼◀▶ <em>(single — never doubled; preserves auto-repeat)</em></td>
 <td>Right <strong>ministick</strong> ▲▼◀▶</td>
 </tr>
 <tr>
-<td>UI Select</td>
-<td>Stick Crown hat push</td>
-<td>Right ministick push</td>
+<td>UI Select / UI Back</td>
+<td>Stick Crown hat press — <strong>short / long</strong></td>
+<td>Right ministick push — <strong>short / long</strong></td>
 </tr>
 <tr>
-<td>UI Back</td>
-<td>Throttle <strong>Coolie hat</strong> push</td>
-<td>Right <strong>Hat C</strong> push</td>
+<td>UI Panel Next / Previous (tab)</td>
+<td>Stick <strong>small black hat</strong> press — <strong>short / long</strong></td>
+<td>Right <strong>Hat B</strong> push — <strong>short / long</strong></td>
 </tr>
 <tr>
-<td>UI Panel Next (tab)</td>
-<td>Throttle <strong>black hat</strong> push</td>
-<td>Right <strong>Hat B</strong> push</td>
-</tr>
-<tr>
-<td>UI Panel Previous (tab) ⚠</td>
-<td>LAUNCH BAR extend</td>
-<td><em>(spare)</em></td>
-</tr>
-<tr>
-<td>Focus Comms Panel</td>
-<td>Throttle black hat ▲</td>
-<td>Right Hat C ▲</td>
-</tr>
-<tr>
-<td>Focus Role Panel</td>
-<td>Throttle black hat ▼</td>
-<td>Right Hat C ▼</td>
-</tr>
-<tr>
-<td>Focus Left/Nav Panel</td>
-<td>Throttle black hat ◀</td>
-<td>Right Hat C ◀</td>
-</tr>
-<tr>
-<td>Focus Internal/Right Panel</td>
-<td>Throttle black hat ▶</td>
-<td>Right Hat C ▶</td>
+<td>Focus Comms / Role / Left-Nav / Internal-Right ⚠</td>
+<td>Stick small black hat ▲ / ▼ / ◀ / ▶</td>
+<td>Right <strong>Hat C</strong> ▲▼◀▶</td>
 </tr>
 <tr>
 <td>Other Interface Mode rows ⚠</td>
@@ -105,6 +81,9 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>Click/hold convention:</strong> short-press = the primary/forward action, long-press = the secondary/back action. Used only where a hold never happens organically (never on directional inputs, fire, or pip-pumping, which rely on held/repeated presses).</p>
+</blockquote>
 <h2 id="galaxy-map-reuses-flight-controls-in-this-category">Galaxy Map <em>(reuses flight controls in this category)</em></h2>
 <table>
 <thead>
@@ -160,12 +139,12 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 <tr>
 <td>Ship – Toggle Camera Suite</td>
 <td><strong>Red switch</strong> above A/G·A/A</td>
-<td><em>(spare)</em></td>
+<td>Left <strong>Button 2</strong></td>
 </tr>
 <tr>
 <td>SRV – Toggle Camera Suite</td>
-<td>Throttle thumb #4 <em>(SRV cat)</em></td>
-<td>Left Button 2 <em>(SRV cat)</em></td>
+<td><strong>Red switch</strong> above A/G·A/A <em>(same control)</em></td>
+<td>Left <strong>Button 2</strong> <em>(same control)</em></td>
 </tr>
 <tr>
 <td>Next / Previous Camera</td>
@@ -392,9 +371,9 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 </thead>
 <tbody>
 <tr>
-<td>Select Target Ahead</td>
-<td>Stick <strong>Coolie hat</strong> push</td>
-<td>Right <strong>paddle</strong></td>
+<td>Select Target Ahead / Wingman Nav-Lock</td>
+<td>Stick <strong>Coolie hat</strong> press — <strong>short / long</strong></td>
+<td>Right <strong>paddle</strong> — short / long</td>
 </tr>
 <tr>
 <td>Select Highest Threat</td>
@@ -453,7 +432,7 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 </tr>
 <tr>
 <td>Wingman Nav Lock</td>
-<td>Lower switch #3 down</td>
+<td><em>(now Coolie hat press — long)</em></td>
 <td>Left Hat C ◀</td>
 </tr>
 <tr>
@@ -500,7 +479,7 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 </tr>
 <tr>
 <td>Deploy Hardpoints</td>
-<td>Stick <strong>Bottom-left hat</strong> push</td>
+<td>Stick <strong>Bottom-left hat</strong> press — <strong>short</strong></td>
 <td>Right Button 3</td>
 </tr>
 <tr>
@@ -599,7 +578,7 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 </tr>
 <tr>
 <td>Microphone Mute (PTT)</td>
-<td><em>(spare — Throttle pinky button)</em></td>
+<td><strong>A/A</strong> button</td>
 <td><em>(unbound)</em></td>
 </tr>
 <tr>
@@ -614,7 +593,7 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 </tr>
 <tr>
 <td>Use Shutdown Field Neutraliser</td>
-<td>Throttle <strong>pinky-toggle up</strong></td>
+<td>Stick <strong>Bottom-left hat</strong> press — <strong>long</strong></td>
 <td>Left Hat C push</td>
 </tr>
 <tr>
@@ -650,14 +629,9 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 </thead>
 <tbody>
 <tr>
-<td>Open Galaxy Map</td>
-<td><strong>A/G</strong> button</td>
-<td>Left <strong>Button 1</strong> (click)</td>
-</tr>
-<tr>
-<td>Open System Map</td>
-<td><strong>A/A</strong> button</td>
-<td>Left Button 1 (hold)</td>
+<td>Open Galaxy Map / System Map</td>
+<td><strong>A/G</strong> button — <strong>short / long</strong></td>
+<td>Left <strong>Button 1</strong> — short / long</td>
 </tr>
 <tr>
 <td>Player HUD Mode Toggle (combat/analysis)</td>
@@ -872,8 +846,8 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 <tbody>
 <tr>
 <td>Select Target Ahead</td>
-<td>Stick <strong>Coolie hat</strong></td>
-<td>Right Hat B</td>
+<td>Stick <strong>Coolie hat</strong> push <em>(same as ship)</em></td>
+<td>Right <strong>paddle</strong> <em>(same as ship)</em></td>
 </tr>
 <tr>
 <td>Other rows ⚠</td>
@@ -953,8 +927,8 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 </tr>
 <tr>
 <td>SRV – Toggle Camera Suite</td>
-<td><em>(spare)</em></td>
-<td><em>(spare)</em></td>
+<td><strong>Red switch</strong> above A/G·A/A <em>(same as ship)</em></td>
+<td>Left <strong>Button 2</strong> <em>(same as ship)</em></td>
 </tr>
 <tr>
 <td>Other rows ⚠</td>
@@ -966,8 +940,42 @@ Playing in VR (Quest 3). On-foot excluded (mouse + keyboard).</p>
 <h2 id="driving-mode-switches">Driving Mode Switches ⚠</h2>
 <p>Contents not drilled — <em>(verify; likely Galaxy Map, lights, HUD mode equivalents)</em>.</p>
 <hr />
+<h1 id="os-commands-joytokey-non-ed">OS Commands (JoyToKey — non-ED)</h1>
+<p>Three OS-level combos, emitted via <strong>JoyToKey edge-conversion</strong> on maintained throttle-base toggles. Flick-to-fire (move and let return) — one flick = one keystroke. None touch ED's binding categories.</p>
+<table>
+<thead>
+<tr>
+<th>OS combo</th>
+<th>Function</th>
+<th>Switch (maintained → JoyToKey)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CTRL+V</strong></td>
+<td>Paste (into ED fields)</td>
+<td>LAUNCH BAR — extend</td>
+</tr>
+<tr>
+<td><strong>SHIFT+WIN+D</strong></td>
+<td>Toggle VR game ↔ Virtual Desktop</td>
+<td>LAUNCH BAR — retract</td>
+</tr>
+<tr>
+<td><strong>ALT+TAB</strong></td>
+<td>Switch PC apps (flip to previous)</td>
+<td>Lower switch #3 — down</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Setup notes:</strong> In JoyToKey, enable the per-button "press once even if held" (one-shot) option so a flick yields a single keystroke. <strong>SHIFT+WIN+D</strong> flips you between the ED VR view and the Virtual Desktop view — JoyToKey must be running globally (not tied to ED window focus) so the toggle-back still fires from the VD side; verify once in practice. <strong>ALT+TAB</strong> is a single discrete keystroke here (no hold-and-cycle), so it flips between the two most-recent apps.</p>
+</blockquote>
+<h1 id="clipboard-note-quest-3-windows">Clipboard note (Quest 3 ↔ Windows)</h1>
+<p>The headset and the PC have <strong>separate clipboards</strong>; copy/paste only works within one. "Copy works, paste doesn't" = copying in the <strong>Quest-native browser</strong> and pasting on the <strong>PC</strong>. Fix: open your reference page in the <strong>PC browser via Virtual Desktop</strong> (not the Quest browser), so copy and CTRL+V stay on the PC's clipboard. Check VD's in-headset settings for a clipboard-sync toggle if you want them bridged.</p>
+<hr />
 <h1 id="remaining-spares-winwing">Remaining spares (WinWing)</h1>
-<p>HMD knob (all 3) · two left-throttle buttons · Throttle pinky button · Throttle ring-finger button · Slide axis · grip Z-axis (if present) · PANEL LTS CW · FLAP DN unused half.</p>
+<p>Throttle <strong>black hat</strong> (4 dir + press) · Throttle Coolie hat press · Throttle pinky-toggle up · HMD knob (all 3) · two left-throttle buttons · Throttle pinky button · Throttle ring-finger button · Slide axis · grip Z-axis (if present) · PANEL LTS CW · FLAP DN unused half. <em>(LAUNCH BAR and lower switch #3 down now carry OS commands.)</em></p>
 <h1 id="verification-pass">Verification pass</h1>
 <p>Categories confirmed against your current build: <strong>Flight Miscellaneous, Weapons, Cooling, Miscellaneous</strong>. Everything marked ⚠ is inferred from the Patch-7 structure (which matched your drill-ins exactly) and needs a glance — or, better, send your <strong><code>Custom.binds</code></strong> and I'll verify every row and device string at once.</p>
 <p><em>o7 Commander.</em></p>
